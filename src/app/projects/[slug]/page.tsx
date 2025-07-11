@@ -2,13 +2,10 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import { FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
-interface ProjectPageProps {
-  params: { slug: string };
-}
-
-export default async function ProjectPage(props: ProjectPageProps) {
-  const { slug } = await props.params;
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   const project = projects[projectIndex];
   if (!project) return notFound();
@@ -40,10 +37,13 @@ export default async function ProjectPage(props: ProjectPageProps) {
           </Link>
         )}
         {project.images && (
-          <img
+          <Image
             src={project.images[0]}
             alt={project.title + " screenshot"}
             className="w-full rounded-lg mb-4 border border-blue-900 shadow object-cover object-top"
+            width={800}
+            height={400}
+            priority={true}
           />
         )}
         <h1 className="text-3xl font-bold mb-2 flex items-center gap-3">
@@ -103,6 +103,6 @@ export default async function ProjectPage(props: ProjectPageProps) {
   );
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
