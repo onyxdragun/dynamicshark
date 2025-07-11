@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +25,18 @@ export default function RootLayout({ children }: {children: ReactNode}) {
   return (
     <html lang="en">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBP7EDZB8H"></script>
-        <script dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-VBP7EDZB8H');`}} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VBP7EDZB8H"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VBP7EDZB8H');`}
+        </Script>
+        <Script id="json-ld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             name: "DynamicShark",
@@ -40,8 +49,8 @@ export default function RootLayout({ children }: {children: ReactNode}) {
             },
             description: "Freelance web developer specializing in React, Next.js, and modern web solutions.",
             email: "info@dynamicshark.com"
-          })
-        }} />
+          })}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-blue-700 via-blue-900 to-black min-h-screen`}

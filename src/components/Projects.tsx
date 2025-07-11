@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -14,10 +15,13 @@ export default function Projects() {
           >
             <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden bg-blue-900 flex items-center justify-center">
               {project.images && project.images.length > 0 ? (
-                <img
+                <Image
                   src={project.images[0]}
                   alt={project.title + " screenshot"}
                   className="object-cover object-top w-full h-full rounded-md"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  priority={true}
                 />
               ) : (
                 <svg
