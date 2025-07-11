@@ -4,8 +4,8 @@ import { FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   const project = projects[projectIndex];
   if (!project) return notFound();
@@ -103,6 +103,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   );
 }
 
-export function generateStaticParams() {
+export function generateStaticParams(): { slug: string }[] {
   return projects.map((p) => ({ slug: p.slug }));
 }
