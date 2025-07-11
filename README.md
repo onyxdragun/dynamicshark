@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DynamicShark Portfolio
 
-## Getting Started
+A modern, accessible, and responsive portfolio site for Tyler Ingram, built with Next.js (App Router), TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Clean, minimal, and modular React components
+- Ocean-inspired gradient background
+- SEO-optimized with metadata, Open Graph, and JSON-LD structured data
+- Responsive design for all devices
+- Project showcase with detail pages and image galleries
+- Dynamic skills section grouped by category
+- Contact form with Mailgun integration (no public email address)
+- Google Analytics 4 event tracking
+- Local business location and microdata for SEO
+- Accessible, semantic HTML and ARIA labels
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This site is a personal showcase for my web development work, skills, and services. It’s designed to be a living portfolio and a resource for potential clients and collaborators.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Location:** Comox Valley, Vancouver Island, BC, Canada
+- **Tech Stack:** Next.js, React, TypeScript, Tailwind CSS, Mailgun, Google Analytics
+- **Focus:** Clean code, accessibility, SEO, and a great user experience
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
+If you’d like to work together or have questions, please use the contact form on the site. I’m open to freelance opportunities, collaborations, and interesting projects!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built with ❤️ by Tyler Ingram — [dynamicshark.com](https://dynamicshark.com)*
